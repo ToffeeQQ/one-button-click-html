@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<title>One button click</title>
+
+<body>
+
+<style>
+
+.container{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+#box {
+width: 200px;
+height: 200px;
+background-color: #e8e8e8;
+border: 5px solid #9c9c9c;
+cursor: pointer;
+}
+
+</style>
+
+<div class="container">
+<div id="box"></div>
+</div>
+
+<script>
+
+const square = document.getElementById("box");
+const colors = ["red","orange","yellow","green","blue","purple","magenta"];
+let index = 0;
+
+square.addEventListener("click",cycle);
+
+function cycle(){
+var size = colors.length;
+var pick = (index += 1)%size;
+var selection = colors[pick];
+square.style.backgroundColor = selection;
+console.log(selection);
+}
+
+</script>
+
+</body>
+</html>
